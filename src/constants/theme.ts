@@ -8,6 +8,8 @@ const {height, width} = Dimensions.get('window');
 
 export const COLORS = {
   PRIMARY: '#0FF',
+  RED: '#fe0000',
+  BLUE: "#1908d1"
 };
 
 export const FONT_SIZE = {

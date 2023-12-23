@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "android:dev": "ENVFILE=.env.dev react-native run-android",
-    "android:prod": "ENVFILE=.env.prod react-native run-android",
+    "android:dev": "SET ENVFILE=.env.dev && react-native run-android",
     "build:android:dev": "ENVFILE=.env.dev npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew clean && ENVFILE=.env.dev ./gradlew :app:assembleRelease -x bundleReleaseJsAndAssets",
     "build:android:prod": "ENVFILE=.env.prod npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew clean && ENVFILE=.env.prod ./gradlew :app:assembleRelease -x bundleReleaseJsAndAssets",
     "ios:dev": "react-native run-ios --scheme \"dev\"",
@@ -15,7 +14,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/geolocation": "^3.1.0",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
@@ -29,6 +27,7 @@
     "react-native-linear-gradient": "^2.8.3",
     "react-native-maps": "^1.8.4",
     "react-native-maps-directions": "^1.9.0",
+    "react-native-permissions": "^4.0.1",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "3.20.0",
     "react-native-svg": "^14.1.0"
